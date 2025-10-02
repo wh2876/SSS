@@ -1,3 +1,29 @@
 Opt. Step 0: https://remoteapp.leedsbeckett.ac.uk/
 Step 1: log in to https://stack1.aet.leedsbeckett.ac.uk/horizon: domain "leedsbeckett" and usual login info
-Step 2: https://guac.aet.leedsbeckett.ac.uk
+
+Task 1 Question: Quote limit information gathering
+- Found on Compute -> Overview: 
+- - Instances: 5
+- - VCPUs: 10
+- - RAM: 20GB
+- - Routers: 5
+- - Also 10 Volumes with total 1000GB storage, 50 Floating IPs,  10 Security Groups, 500 Ports, 5 Networks, etc. etc.
+
+Step 2: log in to https://guac.aet.leedsbeckett.ac.uk, choose a machine, and log in to Openstack again
+- I chose the Linux Desktop rather than the shell
+
+Step 3: Go to API Access -> Download OpenStack RC File -> OpenStack RC Fil and run it using command ". Downloads/project_c7571529-openrc.sh"
+Step 4: Log in with normal login password
+- Whether you type the right password or not nothing visible happens, so you can test if you are logged in with "openstack project list"
+- Now can do console commands to manage my OpenStack account and projects!
+- command "openstack project list" reveals I have 1 project called project_c7571529
+
+Step 5: Navigate the OpenStack user guides find definitions for DB, API, Schedular, Compute and Conductor.
+- I found the definitions by going to End User Guides -> Computer Service (nova)
+- - DB: DataBase, in this case it is an SQL database. It is used to store data used by the system.
+- - API: Application Program Interface, takes HTTP requests, converts commands and communicates with other components by the oslo.messaging* queue or HTTP
+- - Schedular (confirmed from finding the diagram that this should be Schedul"e"r but im quoting): Controller component of the system that determines which host gets each instance
+- - Compute: Manages communication with hypervisor (supervisor to the extreme) and virtual machines
+- - Conductor: Handles requests that need coordination between components, acts as a database proxy, and handles object conversions.
+- *oslo.messaging is a library that facilitates the sending of Remote Procedure Call messages that allow different devices to communicate
+- There was another item on this list not mentioned on the lab sheet called Placement, which tracks resource provider inventories and usage.
