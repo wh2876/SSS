@@ -20,6 +20,7 @@ Step 4: Log in with normal login password
 
 Step 5: Navigate the OpenStack user guides find definitions for DB, API, Schedular, Compute and Conductor.
 - I found the definitions by going to End User Guides -> Computer Service (nova) -> Architecture Overview -> Nova architecture
+[https://docs.openstack.org/nova/xena/_images/architecture.svg]
 - - DB: DataBase, in this case it is an SQL database. It is used to store data used by the system.
 - - API: Application Program Interface, takes HTTP requests, converts commands and communicates with other components by the oslo.messaging* queue or HTTP
 - - Schedular (confirmed from finding the diagram that this should be Schedul"e"r but im quoting): Controller component of the system that determines which host gets each instance
@@ -27,4 +28,4 @@ Step 5: Navigate the OpenStack user guides find definitions for DB, API, Schedul
 - - Conductor: Handles requests that need coordination between components, acts as a database proxy, and handles object conversions.
 - *oslo.messaging is a library that facilitates the sending of Remote Procedure Call messages that allow different devices to communicate
 - There was another item on this list not mentioned on the lab sheet called Placement, which tracks resource provider inventories and usage.
-- The page suggests
+- The page suggests that you should have signficantly more computes than anything - maybe to allow the Hypervisor to view and interact as fast as possible.
