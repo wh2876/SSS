@@ -29,3 +29,10 @@ Step 5: Navigate the OpenStack user guides find definitions for DB, API, Schedul
 - *oslo.messaging is a library that facilitates the sending of Remote Procedure Call messages that allow different devices to communicate
 - There was another item on this list not mentioned on the lab sheet called Placement, which tracks resource provider inventories and usage.
 - The page suggests that you should have signficantly more computes than anything - maybe to allow the Hypervisor to view and interact as fast as possible.
+
+Bonus
+Software -> Case Studies
+- United Nations, Walmart, BT, Hyundai, GEICO, and more all use OpenStack powered systems to do their stuff
+- University of Edinburgh uses it to lower costs and manage big data workloads
+- The UK Civil Service uses OpenStack to host the many different services the UK Government uses and provides, and helps shoulder the intense data loads from the entirety of the UK population.
+- I see that openstack is used to power a LOT of important systems around the world, from private to commercial to governmental use cases.
