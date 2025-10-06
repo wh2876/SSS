@@ -30,4 +30,26 @@ This also means that you can import your public keys into anything that uses the
 ## Task 02 - Networks
 
 I created a network as described, and added a subnet (for task 3) with the IP 192.168.0.0/24.
-The /24 indicates that there is a mask for the first 24 bits to mark them as identifying the network (each number in the IP has 8 bits - 8.16.24.32 - so oin this case 192.168.0 indicate the network). The bits after the 24th bit identify a specific device on the network, like a port.
+The /24 indicates that there is a mask for the first 24 bits to mark them as identifying the network (each number in the IP has 8 bits - 8.16.24.32 - so in this case 192.168.0 indicates the network). The bits after the 24th bit identify a specific device on the network, like a port.
+I left the Gateway blank and so it automatically took 192.168.0.1 since I didn't disable it. I believe this makes it so any device connecting to this network must go through this IP first in order to connect?
+
+## Task 03 - Routers
+
+Created router as described in the lab script.
+The interface-adding part required me to go back to task 2 for the subnet thing since it would not let me choose from the production subnets. Adding an interface to the router means that it can be accessed by another device through that subnet (I think) i.e. be 'seen'.
+
+### Mini-tasks
+The topology of the network can be viewed by going to Network -> Network Topology, and allows you to see the networks, routers, and interfaces created. Probably more stuff when I add it. I created two test routers since I revisited it and deletd the duplicate by using the topology view to click on it and pressing delete.
+
+### Comparisons
+Between the default productions network and my Task02_Test network, I see that:
+1. Shared: production is shared, mine is not
+- This is probably because production is - I assume - given to everyone as a shared host network to branch their private openstack system off of., mine is not shared since it is only accessed by other things within my system.
+2. External: production yes, mine no
+- Same reason as first one, being that production wasn't created within my openstack project, but is an external one provided as a base.
+3. MTU: production 1500, mine 1450
+- Maximum Transmission Unit. This is the largest transferrable single piece of information allowed. I'm not sure what decides these abritrary limits but I assume mine is lower than production's to ensure that should production need to, it can transmit it.
+
+Between the subnets, I only have the one because it's the only one I've created (and not destroyed), and production has 3, 2 of which are 'expired' I think (have old in the name).
+
+## Task 04 - 
