@@ -52,4 +52,6 @@ Between the default productions network and my Task02_Test network, I see that:
 
 Between the subnets, I only have the one because it's the only one I've created (and not destroyed), and production has 3, 2 of which are 'expired' I think (have old in the name).
 
-## Task 04 - 
+## Task 04 - Documentation Finding and Usage
+
+https://docs.openstack.org/xena/ contains lots of documentation for various relevant topics like the End User Guide for how to use the service, and 
