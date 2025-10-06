@@ -19,6 +19,15 @@ The reason for this is that sending over the usual username + password combo ove
 The key pair is a public and a private key, and each work as a 1 way encryption, where the public key encrypts something, and the private decrypts it.
 This means if somebody steals your public key, which you will be sending over the network, all they can do is get encrypted nonsense that only YOU can decrypt.
 
-From what I understand, the "pair" is the pair of a Public and a Private key. A server holds the public key, but the private key is the
-1. Logged into OpenStack via https://remoteapp.leedsbeckett.ac.uk/RDWeb/Pages/en-GB/login.aspx?ReturnUrl=/RDWeb/Pages/en-GB/Default.aspx and chose google chrome, opened the rdp file and authenticated through phone to actually use it (i forgot for about 15 mins) since there was no popup and my phone was in the other room. Then went to openstack
+Then to access machines, I think it works as such:
+- Client: "Hey! Gimme access to this remote computer!" (sending public key)
+- Server: "Yeah sure buddy, read this for me real quick: 'x£XSZ~' " (creates 1 time password "Hello!" and sends it post-encryption with public key)
+- Client: "Easy: 'Hello!'" (sends it back post-decryption after applying private key)
+- Server: "Ok cool come on in B)" (Unencrypted message was received, this guy has the private key associated with this public key!)
 
+This also means that you can import your public keys into anything that uses them, since only the client needs the private key.
+
+## Task 02 - Networks
+
+I created a network as described, and added a subnet (for task 3) with the IP 192.168.0.0/24.
+The /24 indicates that there is a mask for the first 24 bits to mark them as identifying the network (each number in the IP has 8 bits - 8.16.24.32 - so oin this case 192.168.0 indicate the network). The bits after the 24th bit identify a specific device on the network, like a port.
