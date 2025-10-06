@@ -16,12 +16,7 @@ How does it do that?
 I looked it up and learned that SSH stands for Secure Shell, and is a network protocol that provides a secure way to remotely access a device over an unsecured network.
 The reason for this is that sending over the usual username + password combo over an unsecure network has a noticeable risk of being intercepted, stolen, and misused. But with SSH, only one key is sent over the network, and it doesn't matter if someone steals it due to how it works.
 
-When the user first generates their public-private key pair, 
-
+The key pair is a public and a private key, and each work as a 1 way encryption, where the public key encrypts something, and the private decrypts it.
 From what I understand, the "pair" is the pair of a Public and a Private key. A server holds the public key, but the private key is the
 1. Logged into OpenStack via https://remoteapp.leedsbeckett.ac.uk/RDWeb/Pages/en-GB/login.aspx?ReturnUrl=/RDWeb/Pages/en-GB/Default.aspx and chose google chrome, opened the rdp file and authenticated through phone to actually use it (i forgot for about 15 mins) since there was no popup and my phone was in the other room. Then went to openstack
 
-2. Went to Computer -> Key Pairs and created a key pair like the instructions say. Unless I missed it, the lab doesn't really say how they work or what they actually do. It mentions connecting to Linux instances, but from where? How does the key pair get used to do that?
-- The lab also does not say what SSH is, and uses a few never-explained acronyms that leave me guessing (and googling) :(
-- The whole lab script is poorly grammatically structured (i.e. "SSH key pairs enabling users to connect to their Linux instances without requiring passwords." is its own sentence) which made it unenjoyable to read.
--
