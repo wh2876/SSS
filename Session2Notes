@@ -1,5 +1,27 @@
+Quickly want to note I did most of this NOT the day before the lab, it's just that I only got around to making the notes now.
+
+"In this lab we will experiment the role of a tenant’s network administrator." Don't know what this means. Like a housing tenant? Am I a landlord?
+"Although, using the command-line interface allows us to have a full control over our cloud environment, however, exploiting a web-based interface by operators and administrators makes it easier to manage the environments and instances."
+"Although,"? as an opposition to what? I don't think this comma is supposed to be here and it makes this hard to read because I keep putting in the pause. The "however" after does not fit in well at all. I harbour feelings of anger, frustration, and aggression to whoever wrote this lab.
+
+Anyway, I learned that OpenStack uses a web-service called "Horizon" to make a Graphical User Interface that makes it a lot easier to manage the Internet of Things that you can create with OpenStack compared to doing it through the console.
+
+The last paragraph presents some goals, but it's written badly and it makes me feel 'hate'. "In this lab, you asked to perform some tasks" no I didn't. I did not ask to do that. It should be "you *are* asked" and it makes me angry that it isn't.
+
 ## Task 01 - Key Pairs
 
+In this task I must create an SSH Key Pair for use with my OpenStack system. The lab does not say what a Key Pair is ("how does it work? how is it used?") in great detail, only saying that it's used to allow users to connect to their Linux instances without a password.
+How does it do that? 
+
+I looked it up and learned that SSH stands for Secure Shell, and is a network protocol that provides a secure way to remotely access a device over an unsecured network.
+The reason for this is that sending over the usual username + password combo over an unsecure network has a noticeable risk of being intercepted, stolen, and misused. But with SSH, only one key is sent over the network, and it doesn't matter if someone steals it due to how it works.
+
+When the user first generates their public-private key pair, 
+
+From what I understand, the "pair" is the pair of a Public and a Private key. A server holds the public key, but the private key is the
 1. Logged into OpenStack via https://remoteapp.leedsbeckett.ac.uk/RDWeb/Pages/en-GB/login.aspx?ReturnUrl=/RDWeb/Pages/en-GB/Default.aspx and chose google chrome, opened the rdp file and authenticated through phone to actually use it (i forgot for about 15 mins) since there was no popup and my phone was in the other room. Then went to openstack
 
-2. 
+2. Went to Computer -> Key Pairs and created a key pair like the instructions say. Unless I missed it, the lab doesn't really say how they work or what they actually do. It mentions connecting to Linux instances, but from where? How does the key pair get used to do that?
+- The lab also does not say what SSH is, and uses a few never-explained acronyms that leave me guessing (and googling) :(
+- The whole lab script is poorly grammatically structured (i.e. "SSH key pairs enabling users to connect to their Linux instances without requiring passwords." is its own sentence) which made it unenjoyable to read.
+-
