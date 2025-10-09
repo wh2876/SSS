@@ -9,7 +9,7 @@ I believe the security groups - at least the Custom TCP one - is for limiting wh
 # Task 02 - Creating Instances
 
 
-### Cinder Volume (CONT.)
+### Cinder Volume
 Cinder is the service provided by OpenStack that provides the volumes used to store data in the virtual computers you create.
 
 ## Creating an Instance
