@@ -10,7 +10,7 @@ I believe the security groups - at least the Custom TCP one - is for limiting wh
 
 
 ### Cinder Volume (CONT.)
-I do not know what a cinder volume is or why it is used exactly. I think it is a type of architecture that provides the volumes for instances that makes them easy to manage and modify.
+Cinder is the service provided by OpenStack that provides the volumes used to store data in the virtual computers you create.
 
 ## Creating an Instance
 Instances make up much of the data and processing power parts of the system. They can be found by going to Compute->Instances, and have many customisation options, such as:
