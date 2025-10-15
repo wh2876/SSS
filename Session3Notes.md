@@ -52,4 +52,18 @@ This allows you to instantly connect the instance to existing servers. We haven'
 No idea what these do/are
 
 # Task 03 - Using the Instance
-Compute -> Insatance
+Compute -> Insatance -> Choose Instance -> Console -> Right Click and open in new tab on:  "Click here to show only console"
+
+Interface count: 1 ( Choose Instance -> Interfaces )
+IP Address: 192.168.0.207
+Interface Name: Task02 (set manually)
+
+Resuming this process at a later time the instance was very slow and firefox would crash when i tried using it to access the internet. soft rebooting the instance fixed it and I was able to use the internet.
+
+# Task 04 - Network Topology
+Network -> Network Topology
+provider network IP: 172.22.248.0/22 (production subnet from production network)
+private network IP (mine, set up in Session 2): 192.168.0.0/24
+IP Address of VM(s): 192.168.0.207 (only 1 since I've only created 1 instance)
+How is the traffic traversing from the VM to the Internet?: it goes from the VM through the private network via the private router which is connected to the provider network which connects to the internet (and it goes back through it again)
+Examining the router details, what is the IP address of the Router on the production network?: 192.168.0.1
