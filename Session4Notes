@@ -14,7 +14,7 @@ Use the CLI to perform the following tasks:
 12.	Show details of the “production” network: "$openstack network show production" - shows name, activity status, mtu, etc.
 13.	Create new network: "$openstack network create consoleNetwork --internal" creates a new network with admin status up, no subnets, and no availability zone set.
 14.	Create a subnet for this network (eg. 192.168.60.0/24): "$openstack subnet create consoleSubnet --network consoleNetwork --subnet-range 192.170.0.0/24 --dhcp"
-15.	Create another network
+15.	Create another network: "$openstack network create consoleNetwork2", similar output as before, creates a new network with admin state, no subnets, no availablity zones.
 16.	Show available networks 
 17.	Delete the network created in step 15
 18.	Create new router
