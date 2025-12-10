@@ -16,12 +16,19 @@ In Openstack, on the left, click on Network -> Networks. Then "Create Network" i
     [x] - Create Subnet
     Availability Zone Hints: []
 __Name__
+
 Name can be whatever you want, I'm using AgriSenseNetwork for if ever I refer back to this network we've created.
+
 __Admin State__
+
 Not sure if this is needed, but I left it ticked because it was ticked by default
+
 __Create Subnet__
+
 At least 1 subnet is **required** in order to properly connect the network to the other components of our system. The details of them get set in the next tab, and if you accidentally untick this option and finish creating the network early it doesn't matter too much because you can add new subnets to a network whenever you want.
+
 __Availability Zone Hints__
+
 This is stuff beyond our scope, so we just don't touch it since we don't need to. "nova" was the only thing in the box for me which I believe is relevant but isn't something we concern ourselves with too much.
 
 ### Subnet
