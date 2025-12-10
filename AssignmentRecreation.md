@@ -1,4 +1,6 @@
-Step 1: Create Network
+#Step 1: Create Network
+##Step 1a:
+
 - Create router
 - Create network
 - Create server instance
