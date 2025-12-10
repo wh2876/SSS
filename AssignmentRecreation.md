@@ -2,23 +2,52 @@
 
 ## Network:
 
-In Openstack, on the left, click on Network -> Networks. Then add network in the top right
-- Name: [Up to you]
+In Openstack, on the left, click on Network -> Networks. Then "Create Network" in the top right. Under each subheading use these settings:
+### Network
+- Network Name: AgriSenseNetwork //You can put whatever you want as long as it's memorable, I'll be using this for whenever I refer back to this network we created.
+- [x] Enable Admin State
+- [x] Create Subnet
+- Availability Zone Hints: //Don't bother touching this one
+### Subnet
+TBD, Can't access openstack atm to see what the options were.
+Name: AgriSenseSubnetA //the A is for theoretically if we needed more (B, C, etc.). In actuality we only need this one.
+### Subnet Details
+Don't think I touched this at all so leave it alone
 
 ## Router:
 
-On the left, click on Network -> Routers. Then add router in the top right
+On the left, click on Network -> Routers. Then Create Router in the top right and use these settings:
+- Router Name: AgriSenseRouter //just like with network it doesn't matter too much, this is just the example name
+- [x] Enable Admin State
+- External Network: production //this is important to do now because as far as I can tell you have to create a new router if you forget to set this here // Also make sure to pick the one NOT marked "old production"
+- Availability Zone Hints: //Again don't bother
+Submit.
 
-- External Network: Production Network //make sure NOT to pick the ones marked "old_production"
+Once created, click on the newly added to inspect it. Click on the Interfaces tab inside it and Add Interface:
+- Subnet: AgriSenseSubnetA
+- IP Address: //leave empty to let it auto assign
+Submit.
 
 ## Instance:
 
 On the left, click on Compute -> Instances. Then Launch Instance in the top of right
 
-Name: [Up to you]
-Template: Ubuntu Server 22.04
-Flavour: [I think this one is up for debate, I went for base.m5 though]
-Network: [Your project subnet]
+### Details
+- Instance Name: AgriSenseServer //again, just an example name to keep referring to
+- Description: //Completely up to you what you put here
+- Availability Zone: nova
+- Count: 1
+### Source
+- Select Boot Source: Image
+- Create new Volume: Yes
+- Delete Volume on Instance Delete: No //We won't be deleting it, but this makes sure the data we save to the server from the raspberry pi doesn't get deleted if we delete the server instance 
+- Volume Size: //leave this one alone, it will get automatically changed by our upcoming choices.
+Then further down the page click on the Up arrow next to Ubuntu 22.04 Server Template to use it as our Operating System for this image
+### Flavour
+Find base.m5 and click the Up arrow next to it to choose it. Realistically we would be fine using an alternative flavour with lower storage/speed, but this closely matches the RaspberryPi's specifications.
+### Networks
+TBD, again I can't access openstack at the moment.
+Connect to AgriSenseSubnet is all I'm aware of.
 
 
 ## Connecting them up
