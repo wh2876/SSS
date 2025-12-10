@@ -1,32 +1,65 @@
+pre-thingy
+
+    thingy
+
+
+
+
 # Step 1: Create Network
 
 ## Network:
 
 In Openstack, on the left, click on Network -> Networks. Then "Create Network" in the top right. Under each subheading use these settings:
 ### Network
-- Network Name: AgriSenseNetwork //You can put whatever you want as long as it's memorable, I'll be using this for whenever I refer back to this network we created.
-- [x] Enable Admin State
-- [x] Create Subnet
-- Availability Zone Hints: //Don't bother touching this one
+    Network Name: "AgriSenseNetwork" 
+    [x] - Enable Admin State
+    [x] - Create Subnet
+    Availability Zone Hints: []
+__Name__
+Name can be whatever you want, I'm using AgriSenseNetwork for if ever I refer back to this network we've created.
+__Admin State__
+Not sure if this is needed, but I left it ticked because it was ticked by default
+__Create Subnet__
+At least 1 subnet is **required** in order to properly connect the network to the other components of our system. The details of them get set in the next tab, and if you accidentally untick this option and finish creating the network early it doesn't matter too much because you can add new subnets to a network whenever you want.
+__Availability Zone Hints__
+This is stuff beyond our scope, so we just don't touch it since we don't need to. "nova" was the only thing in the box for me which I believe is relevant but isn't something we concern ourselves with too much.
+
 ### Subnet
-TBD, Can't access openstack atm to see what the options were.
-Name: AgriSenseSubnetA //the A is for theoretically if we needed more (B, C, etc.). In actuality we only need this one.
+    Name: AgriSenseSubnetA
+    IP: 192.168.50.0/24
+TBD on ACTUAL specifics, I can't access openstack atm to see what the settings were. I've filled in what I think there was to set
+__Name__
+Same situation as as every other time we pick a name
+__IP__
+Doesn't matter too much, must follow A.B.C.D/E pattern though, I described how the bitmask stuff works in one of SessionNotes files, but the basic gist is devices on this network should have the IP A.B.C.X, where the X is replaced by a number that no other device on the network is using?
 ### Subnet Details
 Don't think I touched this at all so leave it alone
 
 ## Router:
 
 On the left, click on Network -> Routers. Then Create Router in the top right and use these settings:
-- Router Name: AgriSenseRouter //just like with network it doesn't matter too much, this is just the example name
-- [x] Enable Admin State
-- External Network: production //this is important to do now because as far as I can tell you have to create a new router if you forget to set this here // Also make sure to pick the one NOT marked "old production"
-- Availability Zone Hints: //Again don't bother
-Submit.
+    Router Name: AgriSenseRouter 
+    [x] Enable Admin State
+    External Network: production 
+    Availability Zone Hints: []
+__Router Name__
+Again, just a name
+__Enable Admin State__
+Again, not sure if this is needed but I left it ticked because it was ticked by default
+__External Network__
+Make sure to pick the one NOT marked "old production"
+This is important to set now because as far as I can tell you have to create a new router if you forget to set this here Also make sure to pick the one NOT marked "old production"
+The external network in this case allows our router to be connected to the internet (through the production network) 
+__Availability Zone Hints__
+As with the network, leave it.
 
+## Router Continued:
 Once created, click on the newly added to inspect it. Click on the Interfaces tab inside it and Add Interface:
-- Subnet: AgriSenseSubnetA
-- IP Address: //leave empty to let it auto assign
-Submit.
+    Subnet: AgriSenseSubnetA
+    IP Address: //leave empty to let it auto assign
+__Subnet__
+Connecting the router to this subnet means that we now have a route from the outside world to our private network (AgriSenseNetwork) and subnet (AgriSenseSubnet). Now, devices connected to that private network are able to access the outside world.
+Some of the later steps are needed to be taken in order to let the outside world access our private network devices though.
 
 ## Instance:
 
