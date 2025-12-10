@@ -61,8 +61,9 @@ Again, not sure if this is needed but I left it ticked because it was ticked by 
 
 __External Network__
 
-Make sure to pick the one NOT marked "old production"
+Make sure to pick the one NOT marked "old production".
 This is important to set now because as far as I can tell you have to create a new router if you forget to set this here Also make sure to pick the one NOT marked "old production"
+
 The external network in this case allows our router to be connected to the internet (through the production network) 
 
 __Availability Zone Hints__
