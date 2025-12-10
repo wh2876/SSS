@@ -1,20 +1,15 @@
-pre-thingy
-
-    thingy
-
-
-
-
 # Step 1: Create Network
 
 ## Network:
 
 In Openstack, on the left, click on Network -> Networks. Then "Create Network" in the top right. Under each subheading use these settings:
+
 ### Network
     Network Name: "AgriSenseNetwork" 
     [x] - Enable Admin State
     [x] - Create Subnet
     Availability Zone Hints: []
+
 __Name__
 
 Name can be whatever you want, I'm using AgriSenseNetwork for if ever I refer back to this network we've created.
@@ -32,14 +27,22 @@ __Availability Zone Hints__
 This is stuff beyond our scope, so we just don't touch it since we don't need to. "nova" was the only thing in the box for me which I believe is relevant but isn't something we concern ourselves with too much.
 
 ### Subnet
+
     Name: AgriSenseSubnetA
     IP: 192.168.50.0/24
+
 TBD on ACTUAL specifics, I can't access openstack atm to see what the settings were. I've filled in what I think there was to set
+
 __Name__
+
 Same situation as as every other time we pick a name
+
 __IP__
+
 Doesn't matter too much, must follow A.B.C.D/E pattern though, I described how the bitmask stuff works in one of SessionNotes files, but the basic gist is devices on this network should have the IP A.B.C.X, where the X is replaced by a number that no other device on the network is using?
+
 ### Subnet Details
+
 Don't think I touched this at all so leave it alone
 
 ## Router:
@@ -62,9 +65,9 @@ Again, not sure if this is needed but I left it ticked because it was ticked by 
 __External Network__
 
 Make sure to pick the one NOT marked "old production".
-This is important to set now because as far as I can tell you have to create a new router if you forget to set this here Also make sure to pick the one NOT marked "old production"
+This is important to set now because as far as I can tell you have to create a new router if you forget to set this here Also make sure to pick the one NOT marked "old production".
 
-The external network in this case allows our router to be connected to the internet (through the production network) 
+The external network in this case allows our router to connect to the internet (through the production network) and therefore the outside world, including our raspberry pi.
 
 __Availability Zone Hints__
 
