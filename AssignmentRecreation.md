@@ -1,9 +1,28 @@
-#Step 1: Create Network
+# Step 1: Create Network
 
-##Step 1a:
+## Network:
 
-- Create router
-- Create network
+In Openstack, on the left, click on Network -> Networks. Then add network in the top right
+- Name: [Up to you]
+
+## Router:
+
+On the left, click on Network -> Routers. Then add router in the top right
+
+- External Network: Production Network //make sure NOT to pick the ones marked "old_production"
+
+## Instance:
+
+On the left, click on Compute -> Instances. Then Launch Instance in the top of right
+
+Name: [Up to you]
+Template: Ubuntu Server 22.04
+Flavour: [I think this one is up for debate, I went for base.m5 though]
+Network: [Your project subnet]
+
+
+## Connecting them up
+
 - Create server instance
 - Connect them all up
 
