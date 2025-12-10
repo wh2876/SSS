@@ -4,6 +4,13 @@ Step 1: Create Network
 - Create server instance
 - Connect them all up
 
+Step 2: Open the port
+
+The device added is given a Port in the Network overview. It can be recognised by it's IP!
+To allow this device to receive incoming connections in a client-server model, an incoming TCP connection must be allowed through at least 1 port. To do this you must set a security group to assign to this Network Port that allows connection to a specific port on that device.
+- Create a new security group and add a Custom TCP Rule and set the port to the one you will use for the incoming/outgoing connection. This can be changed to a range of ports or all ports.
+- Go back to the Network -> Ports and Edit Port on the desired device, click on security groups, and assign the newly created security group with the TCP rule. now if you use the allowed ports the client-server will work.
+
 Step 2: Set up pi
 
 Step 3: Connect the 2
