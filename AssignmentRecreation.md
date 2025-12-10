@@ -45,19 +45,28 @@ Don't think I touched this at all so leave it alone
 ## Router:
 
 On the left, click on Network -> Routers. Then Create Router in the top right and use these settings:
+
     Router Name: AgriSenseRouter 
     [x] Enable Admin State
     External Network: production 
     Availability Zone Hints: []
+
 __Router Name__
+
 Again, just a name
+
 __Enable Admin State__
+
 Again, not sure if this is needed but I left it ticked because it was ticked by default
+
 __External Network__
+
 Make sure to pick the one NOT marked "old production"
 This is important to set now because as far as I can tell you have to create a new router if you forget to set this here Also make sure to pick the one NOT marked "old production"
 The external network in this case allows our router to be connected to the internet (through the production network) 
+
 __Availability Zone Hints__
+
 As with the network, leave it.
 
 ## Router Continued:
