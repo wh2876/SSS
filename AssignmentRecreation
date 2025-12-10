@@ -1,0 +1,16 @@
+Step 1: Create Network
+- Create router
+- Create network
+- Create server instance
+- Connect them all up
+
+Step 2: Set up pi
+
+Step 3: Connect the 2
+
+- On Openstack, go to router and make note of the IP under the "External Gateway" "External Fixed IPs" key
+- Then go to the subnet of the network you have connected to both the router and the server instance and make note of the CIDR under the 
+
+Step 4: ping
+
+ping to the router IP not the instance IP
