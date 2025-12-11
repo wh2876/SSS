@@ -125,3 +125,9 @@ Step 3: Connect the 2
 Step 4: ping
 
 ping to the router IP not the instance IP
+
+
+# Important Notes
+
+Every time you restart the raspberry pi, you will need to re-run 
+        sudo route add -net [Subnet Gateway IP/mask] gw [External Router IP] dev wlan0
