@@ -233,7 +233,7 @@ Click on Edit Port on the row with the [Server IP] from earlier, then click on S
 
 I think now everything on the Openstack end is sorted, now we move on to the Raspberry Pi!
 
-# Step 2: Raspberry Pi setup
+# Step 2: Raspberry Pi Connection
 I don't have access to the raspberry atm so I can't verify these steps, but:
 
 Our raspberry pi was already set up with the basics, so these instructions will be used to confirm a solid connection between the pi and our openstack server.
