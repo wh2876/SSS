@@ -59,7 +59,7 @@ I didn't touch this at all so leave it alone. It's advanced configuration and un
 
 ## Network continued
 
-Now that the network has been created, go to Subnets (if you aren't already there) and make note of the Network Address for the subnet you created. This is [Network Address] and we will need it later.
+Now that the network has been created, go to Subnets (if you aren't already there) and make note of the Network Address for the subnet you created. This is the [Network Address] and we will need it later.
 
 ## Router:
 
@@ -168,7 +168,7 @@ Press the up arrow next to AgriSenseNetwork to connect this device to that netwo
 
 ## Instance continued
 
-Go to the instance you created and go to Overview, below, under IP Addresses you should see AgriSenseNetwork and an IP Address next to it, make note of this IP Address.
+Go to the instance you created and go to Overview, below, under IP Addresses you should see AgriSenseNetwork and an IP Address next to it, make note of this [Server IP] for later.
 
 ## Security Groups
 
@@ -227,34 +227,37 @@ I'm not sure, but All TCP would probably be fine too, I think it just auto-allow
 
 Go to Network -> Networks and click on AgriSenseNetwork then on Ports. We are now going to apply these new rules to our server so that the raspberry pi can communicate with it.
 
-Click on Edit Port on the row with the Instance IP from earlier, then click on Security Groups. I'm not sure if having the default group will cause conflicts (it's probably fine), but I removed them all and then assigned only the one we created with the ICMP and TCP rules.
+Click on Edit Port on the row with the [Server IP] from earlier, then click on Security Groups. I'm not sure if having the default group in addition will cause conflicts (it's probably fine), but I removed them all and then assigned only the one we created with the ICMP and TCP rules.
 
 ## Finished!
 
-I think now everything on the Openstack end is sorted, now we move on to the raspberry Pi!
+I think now everything on the Openstack end is sorted, now we move on to the Raspberry Pi!
 
+# Step 2: Raspberry Pi setup
+I don't have access to the raspberry atm so I can't verify these steps, but:
 
-# Step 2: Open the port
+Our raspberry pi was already set up with the basics, so these instructions will be used to confirm a solid connection between the pi and our openstack server.
 
-The device added is given a Port in the Network overview. It can be recognised by it's IP!
-To allow this device to receive incoming connections in a client-server model, an incoming TCP connection must be allowed through at least 1 port. To do this you must set a security group to assign to this Network Port that allows connection to a specific port on that device.
-- Create a new security group and add a Custom TCP Rule and set the port to the one you will use for the incoming/outgoing connection. This can be changed to a range of ports or all ports.
-- Go back to the Network -> Ports and Edit Port on the desired device, click on security groups, and assign the newly created security group with the TCP rule. now if you use the allowed ports the client-server will work.
+Open a terminal on the Raspbery Pi and type 
 
-Step 2: Set up pi
+    sudo route add -net [Network Address] gw [Router IP] dev wlan0
 
-Step 3: Connect the 2
+where the bits in square brackets you will have hopefully made note of before (otherwise you can go back and re-obtain this information by logging to openstack and checking again).
+If it doesn't work it might be fixed if you 
 
-- On Openstack, go to router and make note of the IP under the "External Gateway" "External Fixed IPs" key
-- Then go to the subnet of the network you have connected to both the router and the server instance and make note of the CIDR under the 
+    sudo apt install net-tools
 
-Step 4: ping
+After this, make note of the IP of the device, gotten by typing "ifconfig" and pressing enter in the terminal. If it doesn't work try the command above if you hadn't already. If there are still errors here then give up, its so over (not really, I just don't know what to do since we didn't get these problems).
+I believe the ip will be next to "inet" and ours was something like 172.22.250.141 
 
-ping to the router IP not the instance IP
+Then on Openstack, go to Computer -> Instances -> AgriSenseServer -> Console and open it in fullscreen with the hyperlink it shows.
 
+In this, type "ping [RaspberryPiIP]". Hopefully it will work and you will see it repeatedly send a signal to the Pi and time how long it takes for the signal to get back.
 
-# Important Notes
+Then, likewise, type "ping [Router IP]" to ensure the Pi can reach the network, and then try "ping [Server IP]" to test server connection. If the router ping goes through but the server ping fails you may have made an error in the Security Groups configuration.
+
+## Important Notes
 
 Every time you restart the raspberry pi, you will need to re-run 
 
-        sudo route add -net [Subnet Gateway IP/mask] gw [External Router IP] dev wlan0
+        sudo route add -net [Network Address] gw [Router IP] dev wlan0
