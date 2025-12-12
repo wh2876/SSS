@@ -254,7 +254,7 @@ Then on Openstack, go to Computer -> Instances -> AgriSenseServer -> Console and
 
 In this, type "ping [RaspberryPiIP]". Hopefully it will work and you will see it repeatedly send a signal to the Pi and time how long it takes for the signal to get back.
 
-Then, likewise, type "ping [Router IP]" to ensure the Pi can reach the network, and then try "ping [Server IP]" to test server connection. If the router ping goes through but the server ping fails you may have made an error in the Security Groups configuration.
+Then, on the raspberry pi, type "ping [Router IP]" to ensure the Pi can reach the network, and then try "ping [Server IP]" to test server connection. If the router ping goes through but the server ping fails you may have made an error in the Security Groups configuration.
 
 ## Important Notes
 
