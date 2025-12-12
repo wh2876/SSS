@@ -248,7 +248,7 @@ If it doesn't work it might be fixed if you
     sudo apt install net-tools
 
 After this, make note of the IP of the device, gotten by typing "ifconfig" and pressing enter in the terminal. If it doesn't work try the command above if you hadn't already. If there are still errors here then give up, its so over (not really, I just don't know what to do since we didn't get these problems).
-I believe the ip will be next to "inet" and ours was something like 172.22.250.141 
+I believe the ip will be next to "inet" and ours was X.X.X.141 
 
 Then on Openstack, go to Computer -> Instances -> AgriSenseServer -> Console and open it in fullscreen with the hyperlink it shows.
 
