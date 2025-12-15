@@ -261,3 +261,10 @@ Then, on the raspberry pi, type "ping [Router IP]" to ensure the Pi can reach th
 Every time you restart the raspberry pi, you will need to re-run 
 
         sudo route add -net [Network Address] gw [Router IP] dev wlan0
+
+
+
+# Raspberry Pi to ESP32
+
+// nicko'leary PubSubClientlibrary arduino ide
+// (https://www.engineersgarage.com/raspberry-pi-esp32-esp8266-mqtt-iot/)
