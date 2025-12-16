@@ -266,5 +266,9 @@ Every time you restart the raspberry pi, you will need to re-run
 
 # Raspberry Pi to ESP32
 
-// nicko'leary PubSubClientlibrary arduino ide
-// (https://www.engineersgarage.com/raspberry-pi-esp32-esp8266-mqtt-iot/)
+//to connect and transfer/erase/whatever else data to/from it, tap the RST button once when "Connecting..." shows up on whatever youre doing (e.g. esptool erase-flash, upload on arduino IDE)
+// this puts the esp32 into download mode and makes sure not to prevent serial data being transferred
+
+//on my home pc
+
+
