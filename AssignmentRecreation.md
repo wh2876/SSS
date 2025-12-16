@@ -270,5 +270,5 @@ Every time you restart the raspberry pi, you will need to re-run
 // this puts the esp32 into download mode and makes sure not to prevent serial data being transferred
 
 //on my home pc
-
+used this https://www.youtube.com/watch?v=4ZEPPQLY5o4
 
