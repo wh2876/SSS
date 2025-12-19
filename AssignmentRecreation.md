@@ -266,6 +266,28 @@ Every time you restart the raspberry pi, you will need to re-run
 
 # Raspberry Pi to ESP32
 
+1. Install the CH34X drivers for your operating system:
+   Mac: https://learn.adafruit.com/how-to-install-drivers-for-wch-usb-to-serial-chips-ch9102f-ch9102/mac-driver-installation
+   Windows: https://learn.adafruit.com/how-to-install-drivers-for-wch-usb-to-serial-chips-ch9102f-ch9102/overview
+   Linux: 🤷‍♂️, haven't done yet
+
+2. Connect to esp32 via USB-C cable.
+   Ensure the USB-C cable is capable of transferring data. I spent multiple hours trying to troubleshoot and it turned all 3 cables I owned were power-only cables. Everything went smoother after I got a data one.
+
+3. install esptool
+   3.1. Open a terminal, and create a virtual environment (venv) with "python3 -m venv [NAME]" - I went with "esp32" as the name.
+   3.2. Activate venv with terminal command "source [NAME]/bin/activate" OR "./[NAME]/bin/activate" OR "./[NAME]/Scripts/activate.sh"
+        This varies on OS again like the drivers. If you have trouble just search "how to activate python venv [YOUR OS]" and do whatever it says
+   3.3. in terminal type "pip install esptool"
+   3.4. test with "esptool version" OR "esptool.py version"
+        the command varies from OS to OS *again*. If you have trouble with esptool commands then type "esptool", if it doesnt work - "esptool.py" (and if that doesnt work your install may have gone wrong) - and look at the command list for the closest one. For some reason they change between "-"s and "_"s between OS versions.
+
+4. Optional: clear esp32 storage with terminal command (in venv): "esptool erase-flash" (or .py or _ etc.)
+
+5. Install and setup Arduino IDE: https://www.arduino.cc/en/software/ - I got version 2.3.6 for my Mac
+   
+
+
 //to connect and transfer/erase/whatever else data to/from it, tap the RST button once when "Connecting..." shows up on whatever youre doing (e.g. esptool erase-flash, upload on arduino IDE)
 // this puts the esp32 into download mode and makes sure not to prevent serial data being transferred
 
