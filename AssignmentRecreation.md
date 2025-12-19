@@ -280,11 +280,23 @@ Every time you restart the raspberry pi, you will need to re-run
         This varies on OS again like the drivers. If you have trouble just search "how to activate python venv [YOUR OS]" and do whatever it says
    3.3. in terminal type "pip install esptool"
    3.4. test with "esptool version" OR "esptool.py version"
-        the command varies from OS to OS *again*. If you have trouble with esptool commands then type "esptool", if it doesnt work - "esptool.py" (and if that doesnt work your install may have gone wrong) - and look at the command list for the closest one. For some reason they change between "-"s and "_"s between OS versions.
+        the command varies from OS to OS *again*. If you have trouble with esptool commands then type "esptool", if it doesnt work - "esptool.py" (and if that doesnt work your install may have gone wrong) - and look           at the command list for the closest one. For some reason they change between "-"s and "_"s between OS versions.
+3b. If esptool installs correctly but you can't connect to the esp32 because of "no data was serialized" or "wrong boot mode" problems:
+    No data was serialized (or whatever it was) means that the esptool is basically off, which means the wires may be connected incorrectly
+    Wrong boot mode means the esp32 needs to be consuming less power to be in "download mode"
+        I solved this issue by, when executing any upload/download/whatever processes to the esp32, when the command/app says "Connecting..." tap the RST button near the USB-C port one time. Then it usually worked - dependant on timing.
+    
+5. Optional: clear esp32 storage with terminal command (in venv): "esptool erase-flash" (or .py or _ etc.)
 
-4. Optional: clear esp32 storage with terminal command (in venv): "esptool erase-flash" (or .py or _ etc.)
-
-5. Install and setup Arduino IDE: https://www.arduino.cc/en/software/ - I got version 2.3.6 for my Mac
+6. Install and setup Arduino IDE: https://www.arduino.cc/en/software/ - I got version 2.3.6 for my Mac
+   5.1. Once installed go to the toolbar and select Tools -> Boards -> Board Manager -> search "esp32" and install esp32 by Expressif
+   5.2. Then go to Tools -> Manage Libraries -> and install:
+       1. Adafruit AHTX0 by Adafruit
+       2. PubSubClient by Nick O'Leary
+       3. ArduinoJson by Benoit Blanchon
+   5.3. Tools -> Board -> esp32 -> FireBeetle 2 ESP32-E
+   5.4. Tools -> Port -> [ESP32 Port] // To find which one is yours, unplug the USB-C cable connected to the ESP32, look at the available ports (Tools -> Port), then unselect the toolbar to let it refresh, re-plug in the USB-C, and then go back to Tools -> Port and select the new one.
+   5.5. To test, press the Arduino IDE's upload button (top left, arrow pointing right). In my experience this takes a while and can also be very inconvenient. Refer back to the earlier esptool connection test stuff as it's the same problem.
    
 
 
