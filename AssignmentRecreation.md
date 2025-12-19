@@ -298,7 +298,7 @@ Every time you restart the raspberry pi, you will need to re-run
    5.4. Tools -> Port -> [ESP32 Port] // To find which one is yours, unplug the USB-C cable connected to the ESP32, look at the available ports (Tools -> Port), then unselect the toolbar to let it refresh, re-plug in the USB-C, and then go back to Tools -> Port and select the new one.
    5.5. To test, press the Arduino IDE's upload button (top left, arrow pointing right). In my experience this takes a while and can also be very inconvenient. Refer back to the earlier esptool connection test stuff as it's the same problem.
    
-
+7. Checking serial output: Tools -> Serial Monitor -> change the baud on the right from 9600 to 115200 to read the esp32's serial outputs
 
 //to connect and transfer/erase/whatever else data to/from it, tap the RST button once when "Connecting..." shows up on whatever youre doing (e.g. esptool erase-flash, upload on arduino IDE)
 // this puts the esp32 into download mode and makes sure not to prevent serial data being transferred
