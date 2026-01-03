@@ -334,5 +334,9 @@ used this https://www.youtube.com/watch?v=4ZEPPQLY5o4
 
 Hello! Raspberry Pi network password is S1KT8a73Qy9DPi26
 
-Try moving up to the master's room (JG217) since it'll be a better connection
+Try moving up to the master's room (JG217) since it'll be a better connection, straight up the stairs in the corner of the library and the door thats usually locked is unlocked so you can get through it and reach the masters room
+
+I still think the 'not being able to use the sudo route add command' problem is the main problem atm though
+
+I didn't do any floating IP stuff but i think I the IP stuff ive done here works, i suppose just go through the whole set of instructions from the top until the esp32 stuff to make sure everything works fine (hopefully my instructions work, they did for me)
 
