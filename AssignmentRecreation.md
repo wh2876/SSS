@@ -229,6 +229,14 @@ Go to Network -> Networks and click on AgriSenseNetwork then on Ports. We are no
 
 Click on Edit Port on the row with the [Server IP] from earlier, then click on Security Groups. I'm not sure if having the default group in addition will cause conflicts (it's probably fine), but I removed them all and then assigned only the one we created with the ICMP and TCP rules.
 
+# Final step
+
+Open the OpenStack Instance you created and go to console and click on the blue hyperlink to open it. If you need your username adn password they will be 'student' and 'student' by default. Type in
+
+    sudo apt install net-tools
+
+and enter your login info. This library (or whatever it is) is REQUIRED to be have your instance be pinged/have data sent to from the raspberry pi
+
 ## Finished!
 
 I think now everything on the Openstack end is sorted, now we move on to the Raspberry Pi!
